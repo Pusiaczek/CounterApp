@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Display from './Display';
 import ButonsPanel from './ButtonsPanel';
 import Clock from './Clock';
+import Step from './Step';
 
 import './Counter.css';
 
@@ -10,11 +11,12 @@ import './Counter.css';
 function Counter(props) {
     const [counter, setCounter] = useState(props.initValue);
     const [showClock, setShowClock] = useState(true);
+    const [stepValue, setStepValue] = useState(1);
 
     const handleClick = (action) => {
         switch (action) {
             case "add":
-                setCounter(counter + 1);
+                setCounter(counter + stepValue);
                 break;
 
             case "reinit":
@@ -43,12 +45,15 @@ function Counter(props) {
         clockComponent = <h2 className='clock clock-hidden' onClick={handleToggleClock}>Show clock</h2>
     }
 
-    
+    const handleStepChange = (event) => {
+        setStepValue(Number(event.target.value))
+    }
 
     return(
         <div className="counter">
             <Display initValue={counter} />
-            <ButonsPanel click={handleClick} />
+            <ButonsPanel click={handleClick} addStep={stepValue} />
+            <Step stepValue={stepValue} stepChange={(e) => handleStepChange(e)} />
             {clockComponent}
         </div>
     )
