@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import './Step.css'
 
 
 function Step(props) {
-
-
     
     return(
         <div>
