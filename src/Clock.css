@@ -1,0 +1,15 @@
+h2.clock {
+    margin-top: 25px;
+    display: inline-block;
+    text-transform: lowercase;
+}
+
+h2.clock:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+h2.clock-hidden {
+    font-weight: 300;
+    color: indianred;
+}

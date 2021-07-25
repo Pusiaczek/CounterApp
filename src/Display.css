@@ -1,0 +1,15 @@
+.display {
+    margin-bottom: 25px;
+}
+
+h2 {
+    margin: 0;
+}
+
+.span-default {
+    color: black;
+}
+
+.span-special {
+    color: indianred;
+}
